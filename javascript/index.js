@@ -53,6 +53,15 @@ function updateCity(event) {
           </div>
           <div class="time">${cityTime.format("HH:mm:ss")}</div>
         </div>`;
+
+  // Clear any existing intervals for the cities
+  clearInterval(window.updateInterval);
+
+  // Update the time for the new city every second
+  window.updateInterval = setInterval(() => {
+    let timeElement = citiesElement.querySelector(".time");
+    timeElement.innerHTML = moment().tz(cityTimeZone).format("HH:mm:ss");
+  }, 1000);
 }
 
 let citiesSelectElement = document.querySelector("#city");

@@ -26,8 +26,10 @@ select {
 }
 
 a {
-  color: grey;
+  text-decoration: none;
+  color: #a98791;
 }
+
 .container {
   max-width: 600px;
   margin: 60px auto;
