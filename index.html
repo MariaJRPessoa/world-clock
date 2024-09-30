@@ -10,6 +10,8 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock - Maria Pessoa</title>
   </head>
   <body>
@@ -25,19 +27,19 @@
         <option value="">Brasilia</option>
       </select>
 
-      <div class="city">
+      <div class="city" id="lisbon">
         <div>
-          <h2 class="fixed-city">Lisbon</h2>
-          <div class="date">30th of September 2024</div>
+          <h2>Lisbon</h2>
+          <div class="date"></div>
         </div>
-        <div class="time">00:00:00</div>
+        <div class="time"></div>
       </div>
-      <div class="city">
+      <div class="city" id="newyork">
         <div>
-          <h2 class="fixed-city">New York</h2>
-          <div class="date">30th of September 2024</div>
+          <h2>New York</h2>
+          <div class="date"></div>
         </div>
-        <div class="time">00:00:00</div>
+        <div class="time"></div>
       </div>
     </div>
     <footer>
