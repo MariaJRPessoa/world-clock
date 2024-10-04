@@ -32,6 +32,42 @@ function displayNewYork() {
 displayNewYork();
 setInterval(displayNewYork, 1000);
 
+// Updated time in Sydney
+function displaySydney() {
+  let SydneyElement = document.querySelector("#sydney");
+  if (SydneyElement) {
+    let SydneyDateElement = SydneyElement.querySelector(".date");
+    let SydneyTimeElement = SydneyElement.querySelector(".time");
+    SydneyDateElement.innerHTML = moment
+      .tz("Australia/Sydney")
+      .format("dddd, MMMM Do YYYY");
+    SydneyTimeElement.innerHTML = moment
+      .tz("Australia/Sydney")
+      .format("HH:mm:ss");
+  }
+}
+
+displaySydney();
+setInterval(displaySydney, 1000);
+
+// Updated time in Buenos Aires
+function displayBuenosAires() {
+  let BuenosAiresElement = document.querySelector("#buenosaires");
+  if (BuenosAiresElement) {
+    let BuenosAiresDateElement = BuenosAiresElement.querySelector(".date");
+    let BuenosAiresTimeElement = BuenosAiresElement.querySelector(".time");
+    BuenosAiresDateElement.innerHTML = moment
+      .tz("America/Argentina/Buenos_Aires")
+      .format("dddd, MMMM Do YYYY");
+    BuenosAiresTimeElement.innerHTML = moment
+      .tz("America/Argentina/Buenos_Aires")
+      .format("HH:mm:ss");
+  }
+}
+
+displayBuenosAires();
+setInterval(displayBuenosAires, 1000);
+
 // Update time and date once a new location is selected
 function updateCity(event) {
   let cityTimeZone = event.target.value;
@@ -45,6 +81,7 @@ function updateCity(event) {
 
   let citiesElement = document.querySelector(".cities");
 
+  // Create a new city element that will display the time
   citiesElement.innerHTML = `
      <div class="city">
           <div>
@@ -57,7 +94,7 @@ function updateCity(event) {
   // Clear any existing intervals for the cities
   clearInterval(window.updateInterval);
 
-  // Update the time for the new city every second
+  // Update the time for the new city, every second
   window.updateInterval = setInterval(() => {
     let timeElement = citiesElement.querySelector(".time");
     timeElement.innerHTML = moment().tz(cityTimeZone).format("HH:mm:ss");
